@@ -1,0 +1,40 @@
+<h1>Stock Portfolio</h1>
+
+<div id='rounded-corners'>
+<table>
+  <tr>
+    <th>Stock Symbol</th>
+    <th>Stock Name</th>
+    <th>Stock Purchase Price per Share</th>
+    <th>Number of Shares</th>
+    <th>Purchased Value</th>
+    <th>Current Asking Price</th>
+    <th>Current Value</th>
+    <th>+/-</th>
+    <th class='noborder'>Actions</th>
+    <th class='noborder'> </th>
+  </tr>
+
+<% @stocks.each do |stock| %>
+  <tr>
+  	<td><%= stock.symbol %></td>
+  	<td><%= stock.stockname %></td>
+  	<td class='alignright'><%= number_to_currency(stock.price) %></td>
+  	<td class='alignright'><%= stock.quantity.to_s %></td>
+  	<td class='alignright'><%= number_to_currency(stock.purchased_value) %></td>
+  	<td class='alignright'><%= number_to_currency(stock.yahoo_ask_price) %></td>
+  	<td class='alignright'><%= number_to_currency(stock.yahoo_value) %></td>
+  	<td class='alignright'><%= number_to_currency(stock.difference) %></td>
+  	
+    <td class='alignright colored_text'><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    <td class='colored_text'><%= link_to 'Remove', stock, confirm: 'Confirm?', method: :delete %></td>
+   
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+
+<%= link_to 'New Stock', new_stock_path %>
+<div id='user_header'><%= paginate @stocks %></div>
+

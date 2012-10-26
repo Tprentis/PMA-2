@@ -1,0 +1,18 @@
+<h1><%= @stock.symbol %></h1>
+
+<table>
+	<tr>
+		<th>Stock Name</th>
+		<th>Stock Purchase Price</th>
+		<th>Number of Shares</th>
+	</tr>
+	<tr>		
+		<td><%= @stock.stockname %></td>
+		<td class='alignright'><%= number_to_currency(@stock.price)%></td>
+		<td class='alignright'><%= @stock.quantity %></td>
+	</tr>
+</table>		
+<p>
+  <%= link_to "Edit", edit_stock_path(@stock) %> |
+  <%= link_to "Browse Stocks", stocks_path %>
+</p>

@@ -1,0 +1,30 @@
+Application Name: PMA2
+
+This application is configured to run either in the Development Environment or Production Environment using the SQLite database
+
+To run an application server in the Production Environment use =>  'rails server -e production'
+To run an application server in the Development Environment use => 'rails server' or 'rails server -e development'
+Note: do not include the single quotation marks for the above commands
+
+The user will initially be presented a Login page having a link to Sign Up to establish a valid User
+
+Brand new users should select(click) the Sign up link and follow the prompts for email address, password, and password confirmation.
+
+Once the user is an established user, the user should use the Log in link to initiate his/her session.
+
+The user will click on the 'New Stock' link to create a new Stock Entry.
+
+Upon successful entry of a valid stock symbol, a price, and a quantity, the application will dynamically retrieve stock information 
+from http://finance.yahoo.com and present this information in a dynamic html table.
+
+The user will then be able to Edit or Remove, each created stock record.
+
+The main Stock table is paginated, having a maximum of 8 entries per page.  
+
+Validations are provided to ensure that Stock symbols are unique, numeric fields remain numeric, and required fields are filled in by the user.
+
+Note:  Deployment can be managed via Capistrano using the config/deploy.rb file.  
+
+
+
+

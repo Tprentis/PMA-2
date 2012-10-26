@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  symbol: AAPL
+  price: 680.75
+  quantity: 10
+
+two:
+  symbol: GOOG
+  price: 900.30
+  quantity: 10
+  
+three:
+  symbol: MSFT
+  price: 28.65
+  quantity: 10  

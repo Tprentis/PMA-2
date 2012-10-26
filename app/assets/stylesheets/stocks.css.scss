@@ -1,0 +1,26 @@
+// Place all the styles related to the Stocks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.alignright { text-align: right; }
+
+
+table { 
+  border: none;
+  } 
+
+td { 
+  border: 2px solid #D1A319;   
+}
+
+td.noborder { border: none };
+
+table { 
+  border-collapse:collapse; 
+}
+
+td { 
+  width: 95px; 
+  height: 35px;
+  padding: 5px; 
+}
