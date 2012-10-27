@@ -4,11 +4,13 @@ class StocksController < ApplicationController
   # GET /stocks
   # GET /stocks.json
   def index
+    
     @stocks = Stock.order(:symbol).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @stocks }
+      format.js
     end
   end
 
@@ -31,6 +33,7 @@ class StocksController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @stock }
+      format.js
     end
   end
 
@@ -48,9 +51,11 @@ class StocksController < ApplicationController
       if @stock.save
         format.html { redirect_to @stock, notice: 'Good Job! And, good luck with this new stock.' }
         format.json { render json: @stock, status: :created, location: @stock }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @stock.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -80,6 +85,7 @@ class StocksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to stocks_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

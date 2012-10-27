@@ -12,10 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
 
-$(document).ready(
-	function() {
-		$("#flash_notice").fadeIn(700)
-})
+
 
