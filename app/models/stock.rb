@@ -21,6 +21,16 @@ class Stock < ActiveRecord::Base
     "Stock"
   end  
 
+  def self.validate_field(field, value)
+    validity = Stock.new(field => value)
+    validity.valid?
+    if validity.errors.on field
+      ajaxResponse = {:valid => false, field.to_sym => validity.errors[field]}
+    else
+      ajaxResponse = {:valid => true}
+    end  
+  end
+  
   # ---- virtual fields ---- #
   # CSV.parse_line(YahooStock.find_by_symbol(symbol).parsed_response) 
   # returns an Array consisting of Stock Symbol, Ask Price, Bid Price

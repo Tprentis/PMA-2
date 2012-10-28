@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 gem 'httparty'
 gem 'kaminari'
 gem 'jquery-rails' 
+gem 'client_side_validations'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

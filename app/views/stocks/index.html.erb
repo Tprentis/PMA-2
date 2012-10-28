@@ -1,5 +1,6 @@
-<h1>Stock Portfolio</h1>
 
+<h1>Stock Portfolio</h1>
+<div id='stocks_main'>
 <div id='rounded_corners'>
 <table id='big_table'>
   <tr>
@@ -35,6 +36,6 @@
 </div>
 <br />
 
-<%= link_to 'New Stock', new_stock_path, id: "new_link" %>
+<%= link_to 'New Stock', new_stock_path, id: "new_link", remote: true %>
 <div id='user_header'><%= paginate @stocks %></div>
-
+</div>

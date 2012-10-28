@@ -1,4 +1,4 @@
-Application Name: PMA2
+Application Name: PMA-2
 
 This application is configured to run either in the Development Environment or Production Environment using the SQLite database
 
@@ -21,9 +21,11 @@ The user will then be able to Edit or Remove, each created stock record.
 
 The main Stock table is paginated, having a maximum of 8 entries per page.  
 
-Validations are provided to ensure that Stock symbols are unique, numeric fields remain numeric, and required fields are filled in by the user.
+Client Side and Server Side Validations are provided on the Stocks page to ensure that Stock symbols are unique, numeric fields remain numeric, and required fields are filled in by the user.
 
-Note:  Deployment can be managed via Capistrano using the config/deploy.rb file.  
+User Signup and Login pages utilize server side validations only.
+
+Note:  Deployment can be managed via Capistrano using the config/deploy.rb file once configured.  
 
 
 

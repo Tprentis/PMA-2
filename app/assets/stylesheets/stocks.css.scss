@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#ValidClass {}
+#ErrorClass { border-color: red }
+
 .alignright { text-align: right; }
 
 
@@ -23,4 +26,40 @@ td {
   width: 95px; 
   height: 35px;
   padding: 5px; 
+}
+
+tr.required td.label {
+    background: url("/images/forms/backRequiredGray.gif") no-repeat scroll right center transparent;
+    font-weight: bold;
+}
+div.subTableDiv {
+    width: 500px;
+}
+div.subTableDiv td.label {
+    width: 135px;
+}
+ul#homeBlog li div.description {
+    display: none;
+}
+td.field input.error, td.field select.error, tr.errorRow td.field input, tr.errorRow td.field select {
+    background-color: #FFFFD5;
+    border: 2px solid red;
+    color: red;
+    margin: 0;
+}
+tr td.field div.formError {
+    color: #FF0000;
+    display: none;
+}
+tr.errorRow td.field div.formError {
+    display: block;
+    font-weight: normal;
+}
+div.error {
+    color: red;
+}
+div.error a {
+    color: #336699;
+    font-size: 12px;
+    text-decoration: underline;
 }

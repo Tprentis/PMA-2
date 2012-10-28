@@ -69,9 +69,6 @@ a:active {color: #0000ff; text-decoration: underline; }
   border-radius: 20px;
 }
 
-.field_with_errors {
-  display: inline;
-}
 
 .error_messages {
   width: 400px;
@@ -101,7 +98,17 @@ a:active {color: #0000ff; text-decoration: underline; }
   margin-bottom: 0;
 }
 
-form .field, form .actions {
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors .message {
+  color: #D00;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+form .field, form .actions form .cancel {
   margin: 12px 0;
 }
 
@@ -134,11 +141,7 @@ pre {
   color: #CC6600;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
+
 
 #error_explanation {
   width: 450px;

@@ -1,0 +1,8 @@
+// new.js.erb
+$('#stocks_main').slideDown().after($('#new_link').fadeOut()).before('<%= j render("form") %>');
+$('#new_stock').enableClientSideValidations();
+$('#edit_stock').enableClientSideValidations();
+
+
+
+

@@ -6,7 +6,9 @@ PMA2::Application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :stocks
+  resources :stocks 
+  
+  match 'stocks/validate', :to => redirect('/stocks/new')
   
   root to: 'stocks#index'
 

@@ -1,4 +1,5 @@
-<%= form_for @stock do |f| %>
+
+<%= form_for @stock, :validate => true do |f| %>
   <% if @stock.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
@@ -11,7 +12,6 @@
     </div>
   <% end %>
 
-<div id='rounded-corners'>  
 <table>
 	<tr>
 		<th>Stock Symbol</th>
@@ -20,12 +20,16 @@
 	</tr>
 
 	<tr>		  
-		<td class='noborder'><div class='field'><%= f.text_field :symbol %></div></td>
-	 	<td class='noborder'><div class='field'><%= f.text_field :price %></div></td>	  
-	  	<td class='noborder'><div class='field'><%= f.number_field :quantity %></div></td>
+		<td class='noborder'><%= f.text_field :symbol %></td>
+	 	<td class='noborder'><%= f.text_field :price %></td>	  
+	  	<td class='noborder'><%= f.number_field :quantity %></td>
 	  	<td class='noborder'><div class='actions'><%= f.submit %></div></td>
+	  	<% if (@stock.errors.count == 0) && (params[:action] != 'edit') %>
+	  		<td class='noborder'><div id='cancel' class='actions'><%= link_to 'Cancel', stocks_path, remote: true %></div></td>
+		<% end %>
+		
 	</tr>
 </table>
-</div>
- 
+
+
 <% end %>

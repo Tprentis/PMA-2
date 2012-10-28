@@ -88,4 +88,5 @@ class StocksController < ApplicationController
       format.js
     end
   end
-end
+end 
+

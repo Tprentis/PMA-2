@@ -1,4 +1,9 @@
-<div id="edit-form">
+<% content_for :scripts do %>
+        <%= javascript_include_tag 'edit_stock' %>
+<% end %>
+
+<script>$('#cancel').hide()</script>
+
 <h1>Editing Stock Information</h1>
 
 <%= render 'form' %>
