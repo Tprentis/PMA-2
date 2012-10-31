@@ -27,7 +27,7 @@
   	<td class='alignright'><%= number_to_currency(stock.yahoo_value) %></td>
   	<td class='alignright'><%= number_to_currency(stock.difference) %></td>
   	
-	<td class='alignright colored_text'><%= link_to 'Edit', edit_stock_path(stock) %></td> 
+	<td class='alignright colored_text'><%= link_to 'Edit', edit_stock_path(stock), id: "edit_link_#{stock.id}", remote: true %></td> 
     <td class='colored_text'><%= link_to 'Remove', stock, method: :delete, data: {confirm: 'Confirm?'}, remote: true  %></td>
    
   </tr>

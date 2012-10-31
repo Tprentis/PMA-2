@@ -13,14 +13,4 @@ class UsersController < ApplicationController
     end
   end
   
-  # app/controllers/contacts_controller.rb
-  def validate
-    if params[:field].blank? || params[:value].blank?
-      render :nothing => true
-    else
-       @valid = User.validate_field(params[:field], params[:value])
-       render :json => @valid
-    end
-  end
-  
 end

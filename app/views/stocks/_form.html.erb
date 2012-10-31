@@ -19,14 +19,14 @@
 		<th>Quantity Purchased</th>
 	</tr>
 
-	<tr>		  
-		<td class='noborder'><%= f.text_field :symbol %></td>
+	<tr>
+		<td class='noborder'><%= f.text_field :symbol %></td>			
 	 	<td class='noborder'><%= f.text_field :price %></td>	  
 	  	<td class='noborder'><%= f.number_field :quantity %></td>
 	  	<td class='noborder'><div class='actions'><%= f.submit %></div></td>
-	  	<% if (@stock.errors.count == 0) && (params[:action] != 'edit') %>
+	  	<!-- % if (@stock.errors.count == 0) && (params[:action] != 'edit') % -->
 	  		<td class='noborder'><div id='cancel' class='actions'><%= link_to 'Cancel', stocks_path, remote: true %></div></td>
-		<% end %>
+		<!-- % end % -->
 		
 	</tr>
 </table>
