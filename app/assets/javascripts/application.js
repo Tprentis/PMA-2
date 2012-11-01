@@ -16,6 +16,18 @@
 //= require rails.validations
 //= require_tree .
 
+$('#stock_symbol').keyup(function(){
+    this.value = this.value.toUpperCase();
+    this.value = this.value.replace(/^\s+|\s+$/g,'');
+});
+$('#stock_price').keyup(function(){
+    this.value = this.value.toUpperCase();
+    this.value = this.value.replace(/^\s+|\s+$/g,'');
+});
+$('#stock_quantity').keyup(function(){
+    this.value = this.value.toUpperCase();
+    this.value = this.value.replace(/^\s+|\s+$/g,'');
+});
 
 
 

@@ -20,12 +20,16 @@
 	</tr>
 
 	<tr>
-		<td class='noborder'><%= f.text_field :symbol %></td>			
+		<% if params[:action] == 'edit' %>
+			<td style='border: none'><%= @stock.symbol %></td>
+		<% else %>
+			<td class='noborder'><%= f.text_field :symbol %></td>
+		<% end %>				
 	 	<td class='noborder'><%= f.text_field :price %></td>	  
 	  	<td class='noborder'><%= f.number_field :quantity %></td>
 	  	<td class='noborder'><div class='actions'><%= f.submit %></div></td>
 	  	<!-- % if (@stock.errors.count == 0) && (params[:action] != 'edit') % -->
-	  		<td class='noborder'><div id='cancel' class='actions'><%= link_to 'Cancel', stocks_path, remote: true %></div></td>
+	  		<td class='noborder'><div id='cancel' class='actions'><%= link_to 'Cancel', stocks_path, :remote => true %></div></td>
 		<!-- % end % -->
 		
 	</tr>

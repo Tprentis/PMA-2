@@ -6,6 +6,11 @@
  *= require_tree .
  *= require jquery-ui 
 */
+
+.disabled {
+  color: grey; 
+}
+
 a img {
   border: none;
 }

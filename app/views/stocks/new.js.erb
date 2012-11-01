@@ -1,7 +1,18 @@
 // new.js.erb
 $('#stocks_main').slideDown().after($('#new_link').fadeOut()).before('<%= j render("form") %>');
 $('#new_stock').enableClientSideValidations();
-
+$('#stock_symbol').keyup(function(){
+    this.value = this.value.toUpperCase();
+    this.value = this.value.replace(/^\s+|\s+$/g,'');
+});
+$('#stock_price').keyup(function(){
+    this.value = this.value.toUpperCase();
+    this.value = this.value.replace(/^\s+|\s+$/g,'');
+});
+$('#stock_quantity').keyup(function(){
+    this.value = this.value.toUpperCase();
+    this.value = this.value.replace(/^\s+|\s+$/g,'');
+});
 
 
 

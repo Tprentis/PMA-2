@@ -1,23 +1,23 @@
 class Stock < ActiveRecord::Base
   attr_accessible :price, :quantity, :symbol
   paginates_per 8
+
   # ---- validations ---- #
   
   validates :symbol,  :presence => true, :uniqueness => true,
                     :length => {:minimum => 1, :maximum => 5}
+  validates_format_of :symbol, :with => /^\w+$/i, :message => "can only contain letters and numbers.(and no spaces allowed)"              
   validates :price, :presence => true, :numericality => { :greater_than => 0 },
                     :length => {:minimum => 1, :maximum => 10}  
   validates :quantity, :presence => true, :numericality => { :only_integer => true,  :greater_than => 0},
                     :length => {:minimum => 1, :maximum => 10}                                      
   validate  :symbol_must_exist 
   
-  before_save :uppercase_symbol
+  before_validation :uppercase_symbol
 
   def uppercase_symbol
-    self.symbol.strip!
     self.symbol.upcase!
   end          
-          
   def symbol_must_exist  # Yahoo returns an 'N/A' in the Ask and Bid fields if bogus stock symbol requested
      if stock_array[1] == 'N/A' 
        errors.add('symbol', 'does not exist') 
@@ -67,7 +67,7 @@ class Stock < ActiveRecord::Base
 private
 
   def stock_array
-    @stock_array  ||=  CSV.parse_line(YahooStock.find_by_symbol(symbol.strip!).parsed_response)
+    @stock_array  ||=  CSV.parse_line(YahooStock.find_by_symbol(symbol).parsed_response)
   end
   
 end

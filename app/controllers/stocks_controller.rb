@@ -46,7 +46,9 @@ class StocksController < ApplicationController
   # POST /stocks.json
   def create
     @stock = Stock.new(params[:stock])
-
+    
+   # @stock.symbol = params[:stock][:symbol].to_s.strip.upcase!
+  
     respond_to do |format|
       if @stock.save
         format.html { redirect_to @stock, notice: 'Good Job! And, good luck with this new stock.' }
@@ -64,7 +66,7 @@ class StocksController < ApplicationController
   # PUT /stocks/1.json
   def update
     @stock = Stock.find(params[:id])
-
+     
     respond_to do |format|
       if @stock.update_attributes(params[:stock])
         format.html { redirect_to @stock, notice: 'Here\'s your updated stock.' }
